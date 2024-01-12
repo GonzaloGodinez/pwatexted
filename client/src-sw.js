@@ -2,7 +2,7 @@
 // To actually respond to requests with a cached response, we need to use a strategy called StalewhileRevalidate
 // This startegy will first check the cache for a response, and if it finds one, it will return int.
 const { offlineFallback, warmStrategyCache } = require('workbox-recipes');
-const { CacheFirst } = require('workbox-strategies');
+const { CacheFirst, StaleWhileRevalidate } = require('workbox-strategies');
 const { registerRoute } = require('workbox-routing');
 const { CacheableResponsePlugin } = require('workbox-cacheable-response');
 const { ExpirationPlugin } = require('workbox-expiration');
@@ -32,4 +32,17 @@ warmStrategyCache({
 registerRoute(({ request }) => request.mode === 'navigate', pageCache);
 // I am here Jan 10 2024 @ 2:45 AM
 // TODO: Implement asset caching
-registerRoute();
+registerRoute(
+   // Here we define the callback function that will filter the requests we want to cache (in this case, JS and CSS files)
+   ({ request }) => ['style', 'script', 'worker'].includes(request.destination),
+   new StaleWhileRevalidate({
+     // Name of the cache storage.
+     cacheName: 'asset-cache',
+     plugins: [
+       // This plugin will cache responses with these headers to a maximum-age of 30 days
+       new CacheableResponsePlugin({
+         statuses: [0, 200],
+       }),
+     ],
+   })
+);
