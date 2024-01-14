@@ -1,68 +1,62 @@
 # pwatexted Text Editor
-## Your Task
 
-As you have progressed through this course, you have put together a number of impressive projects that you can show off to potential employers. This project is no exception; in fact, it features some of the most impressive expressions of the concepts you have learned so far.
+## link to Repo
+[link to GGL repository url github](https://github.com/GonzaloGodinez/pwatexted)
 
-Your task is to build a text editor that runs in the browser. The app will be a single-page application that meets the PWA criteria. Additionally, it will feature a number of data persistence techniques that serve as redundancy in case one of the options is not supported by the browser. The application will also function offline.
+## link to Heroku
+[link to Heroku](https://ggl-texteditor-23f5063fdfe4.herokuapp.com/)
 
-To build this text editor, you will start with an existing application and implement methods for getting and storing data to an IndexedDB database. You will use a package called `idb`, which is a lightweight wrapper around the IndexedDB API. It features a number of methods that are useful for storing and retrieving data, and is used by companies like Google and Mozilla.
+## Description
+I created a text editor application using JavaScript files that have been bundled using webpack plugins and generated HTML file, service worker and a manifest file to run in the browser with the ability to run offline using cache and storing the data into IndexedDB API database to create  text. 
 
-You will deploy this full-stack application to Heroku using the [Heroku Deployment Guide on The Full-Stack Blog](https://coding-boot-camp.github.io/full-stack/heroku/heroku-deployment-guide).
+## Table of Contents
 
-**Important**: Make sure your submission includes the `.npmrc` file in this starter code.  This will ensure your application will deploy properly to heroku.
+- [Installation](#installation)
+- [Usage](#usage)
+- [Sample](#Samples)
+- [License](#license)
 
-## User Story
+## Installation
+1.	GUI bash terminal point using CD into project directory.
+2.	Git clone this repo.
+3.	CD into pwatexted.	
+4.	Open using text editor, for VS Code, 
+5.  At the command line type run npm i 
+6.  At the command line type npm run start
+7.	Application will start in the browser on the local host http://localhost:3000/
+8.  Text editor is ready to be used
 
-```md
-AS A developer
-I WANT to create notes or code snippets with or without an internet connection
-SO THAT I can reliably retrieve them for later use
-```
+## Usage
+Creates IndexedDB database.
+View, Add, update and delete text in database.
 
-## Acceptance Criteria
+## Samples
 
-```md
-GIVEN a text editor web application
-WHEN I open my application in my editor
-THEN I should see a client server folder structure
-WHEN I run `npm run start` from the root directory
-THEN I find that my application should start up the backend and serve the client
-WHEN I run the text editor application from my terminal
-THEN I find that my JavaScript files have been bundled using webpack
-WHEN I run my webpack plugins
-THEN I find that I have a generated HTML file, service worker, and a manifest file
-WHEN I use next-gen JavaScript in my application
-THEN I find that the text editor still functions in the browser without errors
-WHEN I open the text editor
-THEN I find that IndexedDB has immediately created a database storage
-WHEN I enter content and subsequently click off of the DOM window
-THEN I find that the content in the text editor has been saved with IndexedDB
-WHEN I reopen the text editor after closing it
-THEN I find that the content in the text editor has been retrieved from our IndexedDB
-WHEN I click on the Install button
-THEN I download my web application as an icon on my desktop
-WHEN I load my web application
-THEN I should have a registered service worker using workbox
-WHEN I register a service worker
-THEN I should have my static assets pre cached upon loading along with subsequent pages and static assets
-WHEN I deploy to Heroku
-THEN I should have proper build scripts for a webpack application
-```
+![Main page ](./Assets/Mainpage.png)
+![Manifest pg](./Assets/Manifest.png)
+![Service Worker](./Assets/serviceworkers.png)
+![Delete Post](./Assets/idb-storage.png)
 
-## Mock-Up
+## License
+MIT License
 
-The following animation demonstrates the application functionality:
+Copyright (c) 2023 GonzaloGodinez
 
-![Demonstration of the finished Module 19 Challenge being used in the browser and then installed.](./Assets/00-demo.gif)
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-The following image shows the application's `manifest.json` file:
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
-![Demonstration of the finished Module 19 Challenge with a manifest file in the browser.](./Assets/01-manifest.png)
-
-The following image shows the application's registered service worker:
-
-![Demonstration of the finished Module 19 Challenge with a registered service worker in the browser.](./Assets/02-service-worker.png)
-
-The following image shows the application's IndexedDB storage:
-
-![Demonstration of the finished Module 19 Challenge with a IndexedDB storage named 'jate' in the browser.](./Assets/03-idb-storage.png)
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+---
